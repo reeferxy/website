@@ -138,7 +138,7 @@ $(".coverImage").hover(function () {
     function startCountdown()
     {
         // set the date we're counting down to
-        //var target_date = new Date("09/12/2014  00:00:00").getTime();
+        var target_date = new Date("09/12/2021  00:00:00").getTime();
         var target_date = null;
 
         if (target_date > Date.now())
