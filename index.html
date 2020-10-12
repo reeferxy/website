@@ -1,37 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<head></head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>LARRY F - RÄGEBOGE - IRGENDÖPPIS MIT 2000</title>
+    <meta name="keywords" content="Larry,LarryF,Rägeboge,Raegeboge,Rageboge,Regeboge,Irgend,öppis,mit,2000" />
+    <meta name="description" content="DAS ALBUM &quot;IRGEND&#214;PPIS MIT 2000&quot; IM SEPTEMBER ERH&#196;LTLICH." />
+    <link rel="shortlink" href="http://www.larryf.ch" />
+    <link rel="canonical" href="http://www.larryf.ch/" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+    <!-- Bootstrap -->
+    <link href="style/normalize.css" rel="stylesheet">
+    <link href="style/bootstrap.min.css" rel="stylesheet">
+    <link href="style/animation.css" rel="stylesheet">
+    <link href="style/site.css" rel="stylesheet">
+
+
+    <meta property="og:title" content="LARRY F - RÄGEBOGE - IRGENDÖPPIS MIT 2000" />
+    <meta property="og:site_name" content="Rägeboge Single" />
+    <meta property="og:url" content="http://www.larryf.ch" />
+    <meta property="og:description" content="Die Single Rägeboge JETZT ERHÄLTLICH!." />
+    <meta property="fb:app_id" content="1415426235402439" />
+    
+    <meta property="og:image" content="http://www.larryf.ch/img/fbImage_new.jpg" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if IE]>
+       <link href="style/IE.css" rel="stylesheet">
+      <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
 <body>
-<header>
-    <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="/videos/Video1.mp4" type="video/mp4">
-    </video>
-    <div class="container h-100">
-      <div class="d-flex h-100 text-center align-items-center">
-        <div class="w-100 text-white">
-          <h1 class="display-3">Video Header</h1>
-          <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+    <div id="Intro">
+        <div class="container-fluid body-content">
+            <div class="row row-fluid">
+                <div class="col-md-12" style="text-align: center;">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+           <noscript> <div class="row row-fluid">
+                <div class="col-md-12" style="text-align: center; background-color:red;color:#fff;padding:5px;">
+                    Please enable Javascript to use the full functionality of this webpage...
+                    </div>
+                </div></noscript>
+            <div class="row row-fluid">
+                <div class="col-md-12 jumbotron" style="text-align: center;">
+                    <div class="col-md-6 col-md-offset-3">
+                        <img src="img/LARRY_F_LOGO_VEKTOR.png" title="Larry F Logo" alt="Hauptlogo von Larry F" />
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <img src="img/Raegeboge_LOGO_VEKTOR.png" title="Rägeboge Logo" alt="Logo der neuen Single Rägeboge" />
+                    </div>
+                    <div class="col-lg-12">
+                        <div id="countdown"></div>
+                    </div>
+                    <div class="hidden-xl col-md-6 col-md-offset-3 " style="margin-top: 150px">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" style="display: none;" id="startDiscovery">DISCOVER NOW</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
-  
-  <section class="my-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 mx-auto">
-          <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background! The header text is vertically centered using flex utilities that are build into Bootstrap 4.</p>
-          <p>The overlay color can be changed by changing the <code>background-color</code> of the <code>.overlay</code> class in the CSS.</p>
-          <p>Set the mobile fallback image in the CSS by changing the background image of the header element within the media query at the bottom of the CSS snippet.</p>
-          <p class="mb-0">
-            Created by <a href="https://startbootstrap.com">Start Bootstrap</a>
-          </p>
+    <div id="promoVideo" style="width: 100%; height: 100%;">
+
+        <div id="promoVideoDiv" style="width: 100%; height: 100%;"></div>
+
+    </div>
+    <div id="ytmask">
+    </div>
+    <div class="closePromoVideo"><span class="glyphicon glyphicon-remove "></span></div>
+
+    <div id="video-main" class="video-main">
+    </div>
+    <div class="wrap">
+        <div class="container-fluid body-content">
+            <div class="row row-fluid">
+                <div class="col-md-12">
+                    <div class="mainLogo">
+                        <img src="img/LARRY_F_LOGO_VEKTOR.png" title="Larry F Logo" alt="Hauptlogo von Larry F" /><h1>LARRY F</h1>
+                    </div>
+                    <div class="subLogo">
+                        <img src="img/Raegeboge_LOGO_VEKTOR.png" title="Rägeboge Logo" alt="Logo der neuen Single Rägeboge" /><h2>RÄGEBOGE</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row row-fluid">
+                <div class="col-md-12">
+                    <a href="https://itunes.apple.com/ch/album/rageboge-single/id880941067?l=de&ls=1" target="_blank">
+                        <div class="bigBall left">
+                            <div class="bigBallText">
+                                <span>BUY<br />
+                                </span>
+                                <div>SINGLE</div>
+                                <span style="margin-top: 0;">ON ITUNES</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="bigBall right">
+                        <div class="bigBallText">
+                            <span>PLAY<br />
+                            </span>
+                            <div>VIDEO</div>
+                            <span style="margin-top: 0;">ON YOUTUBE</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row row-fluid">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-7 col-md-offset-5 col-lg-4 col-lg-offset-8">
+
+
+
+                    <div class="preOrder">
+                        DAS ALBUM<br />
+                        <strong>"IRGENDÖPPIS MIT 2000"</strong><br />
+                        IM SEPTEMBER ERHÄLTLICH.<br />
+                        <!--<span>JETZT VORBESTELLEN!</span>-->
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
+
     </div>
-  </section>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row row-fluid">
+                <div class="col-xs-6 col-sm-2 col-md-1 col-lg-1">
+                    <div class="socialDiv"><script type="text/javascript">
+                                               //<![CDATA[
+                                               <!--
+                                               var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                                               "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                                               " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!05{)rt{y+xx=l;=+;" +
+                                               "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                                               "\"(9),1\\\"\\\\>4%64)'hr;enlwKn_@0 02\\\\\\\\24\\\\00\\\\03\\\\\\\\24\\\\05" +
+                                               "\\\\02\\\\\\\\W)N(06\\\\04\\\\02\\\\\\\\27\\\\05\\\\03\\\\\\\\17\\\\01\\\\0" +
+                                               "3\\\\\\\\IL1600\\\\\\\\13\\\\0I\\\\00\\\\04\\\\03\\\\\\\\26\\\\01\\\\02\\\\" +
+                                               "\\\\03\\\\0r\\\\\\\\\\\\0 38a5-5>4877v01\\\\\\\\7o=5m&7n02\\\\\\\\'!3!01\\\\"+
+                                               "\\\\=27!5`03\\\\\\\\L}\\\\M\\\\\\\\P\\\\2X03\\\\\\\\4X00\\\\\\\\24\\\\04\\\\"+
+                                               "03\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\XKZCnQ\\\\\\\\NVq{{opy\\\"\\\\f(;" +
+                                               "} ornture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%+;y+9)<1(iif" +
+                                               "){++;i<l;i=0(ior;fthnglex.l=\\\\,\\\\\\\"=\\\",o iar{vy)x,f(n ioctun\\\"f)\""+
+                                               ")"                                                                           ;
+                                               while(x=eval(x));
+                                               //-->
+                                               //]]>
+</script>
+</div>
+                </div>
+                <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                    <div class="socialDiv"><a id="impressumLink" class="textLink" href="#Impressum" target="_blank">Impressum</a></div>
+                </div>
+                <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1 col-sm-offset-4 col-md-offset-5 col-lg-offset-5">
+                    <div class="socialDiv lowerIcon ">
+                        <a href="https://www.facebook.com/larryfmusic" target="_blank">
+                            <img src="img/fb_Web_icons.png" alt="Facebook Icon" title="Like Larry F auf Facebook" /></a>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+                    <div class="socialDiv">
+                        <a href="http://www.youtube.com/user/LarryFofficial?feature=watch" target="_blank">
+                            <img src="img/YouT_Web_icons.png" alt="Youtube Icon" title="Schaue Videos von Larry F auf YouTube" /></a>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+                    <div class="socialDiv">
+                        <a href="http://instagram.com/larryfmusic" target="_blank">
+                            <img src="img/insta_Web_icons.png" alt="Instagram Icon" title="Folge Larry F auf Instagram" /></a>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+                    <div class="socialDiv lowerIcon ">
+                        <a href="https://twitter.com/larrydieflinte" target="_blank">
+                            <img src="img/twitter_Web_icons.png" alt="Twitter Icon" style="width:70px" title="Folge Larry F auf Twitter" /></a>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </footer>
+    <div id="impressum">
+        <div class="container-fluid body-content" style="background-color: #000">
+            <div class="row row-fluid">
+                <div class="closeImpressum"><span class="glyphicon glyphicon-remove "></span></div>
+                <div class="col-md-12 jumbotron">
+                    <h1>Impressum</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+
+                        <strong>Betreiber der Webseite</strong>
+                        <br>
+                        <br>
+                        LBMSCC<br>
+                        Lars Badertscher und Michael Schertenleib Creative Commons<br>
+                        8001 Zürich<br>
+                        <br>
+                        <a href="http://www.larryf.ch">www.larryf.ch</a>
+                        <br>
+                        <script type="text/javascript"><!--
+    var nmwdptu = ['i', 'h', '>', 'y', 'h', 'c', ' ', '=', '=', '<', 'f', 'r', 'r', 'l', '>', '<', 'c', 'i', '@', 's', '.', 'r', 'o', '@', 'l', 'y', '/', 'a', 'i', '"', 'm', 'e', 'f', 'm', 'a', 'l', '"', 'a', 'c', '"', 'o', 'r', 'h', 'l', ':', 'r', 'o', 'e', 'n', 'f', 'l', '"', '.', 'a', 'a', 'f', 'i', 'a', 't', 'a', 'n', ' ', 's', 'f']; var zdrhmzx = [11, 59, 63, 25, 3, 32, 31, 37, 7, 0, 48, 4, 23, 43, 45, 60, 28, 16, 50, 35, 57, 54, 49, 20, 33, 55, 61, 41, 42, 8, 9, 39, 26, 40, 1, 12, 30, 52, 58, 44, 14, 24, 29, 21, 15, 53, 19, 5, 17, 56, 51, 38, 27, 22, 34, 18, 46, 10, 13, 62, 47, 2, 36, 6]; var wkofpfk = new Array(); for (var i = 0; i < zdrhmzx.length; i++) { wkofpfk[zdrhmzx[i]] = nmwdptu[i]; } for (var i = 0; i < wkofpfk.length; i++) { document.write(wkofpfk[i]); }
+    // --></script>
+<noscript>Please enable Javascript to see the email address</noscript>
+                        
+
+
+                    </p>
+                </div>
+                <div class="col-md-6">
+
+                    <p>
+                        <strong>Konzept, Design und Programmierung</strong>
+                        <br>
+                        <br>
+                        PTCoding<br>
+                        Zürcherstrasse 100<br>
+                        8640 Rapperswil<br>
+                        <br>
+                        <script type="text/javascript"><!--
+    var pfiqueu = ['o', 'm', 't', 'c', 'l', 'a', 'r', '"', 'm', 't', 'e', 'f', '=', 'a', 's', 'a', 'a', 'o', 'e', 's', 'l', '"', 'h', 'i', 'o', 'r', 't', 'l', 'l', 't', 'c', 'a', 'l', 'e', '@', 'c', 'a', 'a', 's', 'm', '<', 'a', 'i', '/', ':', '.', 'm', 'i', ' ', 'e', '"', 'i', '>', 'r', 'a', 'l', 'm', 't', '"', 'e', 'm', 'l', '.', 'p', '<', 'e', '=', 'k', '@', '>', 'p', 'a', 's', 'a', ' ', 'k']; var mhkgqnj = [25, 9, 24, 38, 39, 10, 4, 44, 46, 60, 29, 6, 43, 63, 28, 68, 1, 14, 65, 41, 67, 50, 3, 20, 61, 19, 54, 49, 12, 13, 21, 17, 30, 35, 59, 57, 53, 27, 64, 26, 0, 40, 11, 73, 15, 33, 34, 48, 37, 71, 36, 56, 51, 55, 47, 31, 62, 18, 8, 5, 70, 66, 69, 52, 72, 45, 7, 58, 23, 75, 16, 74, 42, 32, 2, 22]; var jltlrna = new Array(); for (var i = 0; i < mhkgqnj.length; i++) { jltlrna[mhkgqnj[i]] = pfiqueu[i]; } for (var i = 0; i < jltlrna.length; i++) { document.write(jltlrna[i]); }
+    // --></script>
+<noscript>Please enable Javascript to see the email address</noscript>
+                    </p>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        <h3>Haftungsausschluss (Disclaimer)</h3>
+                        Die Informationen auf dieser Website wurden in der gebotenen Sorgfalt zusammengestellt. Sie werden periodisch aktualisiert. Eine Haftung oder Garantie für Aktualität, Richtigkeit und Vollständigkeit der Informationen kann die Betreiberin der Website jedoch nicht übernehmen.
+        Alle Rechte an den Inhalten auf der Website der Betreiberin bleiben vorbehalten. Von der Website verweisen möglicherweise Links auf andere Websites, die durch Dritte erstellt und unterhalten werden. Die Betreiberin ist für die darin enthaltenen Informationen nicht verantwortlich und übernimmt keinerlei Gewähr für deren Richtigkeit, Vollständigkeit oder Aktualität. Die Benutzungsrechte daran unterliegen den Einschränkungen und Auflagen der jeweiligen Website-Betreiber. Die Nutzung der Informationen auf einer solchen Website oder der darin angebotenen Leistung erfolgt auf eigenes Risiko.
+                        <br>
+                        Bitte beachten Sie die üblichen Sicherheitsrisiken bei der Übermittlung von Daten und E-Mails über das Internet. Die Betreiberin kann nicht haftbar gemacht werden für Schäden, die als Folge des Missbrauchs von personenbezogenen Daten entstehen. Es ist nicht erlaubt, die in dieser Website veröffentlichten E-Mail Adressen ohne Erlaubnis mit Werbung oder anderen unerwünschten Mails zu beliefern. Die Betreiberin dieser Website behält sich ausdrücklich das Recht vor, im Falle der unverlangten Zusendung von E-Mails (SPAM) rechtliche Schritte einzuleiten.
+       
+                        <h3>Persönliche Daten</h3>
+                        Diese Webseite kann grundsätzlich ohne Angabe von persönlichen Daten abgerufen werden. Für die Kontaktaufnahme mit uns oder für interaktive Bereiche der Website kann die Angabe von persönlichen Daten verlangt werden.<br>
+                        Sämtliche Daten werden entsprechend der aktuellen Datenschutzgesetzgebung behandelt und nicht ohne Information an Dritte weitergegeben. Durch die Eingabe/Angabe ihrer persönlichen Daten erklären Sie sich damit einverstanden.<br>
+                        Die Daten in Zusammenhang mit dieser Website werden unverschlüsselt über ein offenes, jedermann zugängliches Netz gesendet. Auch bei verschlüsselter Datenübertragung (z.B. SSL) bleiben Absender und Empfänger sichtbar, so dass Rückschlüsse Dritter auf eine mögliche Geschäftsbeziehung nicht ausgeschlossen werden können.
+       
+                        <h3>Google Analytics</h3>
+                        Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. („Google“). Google Analytics verwendet sog. „Cookies“, Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google in Verbindung bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.
+
+     
+                    </p>
+                    <hr />
+                    <p id="copyright">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="scripts/detectMobile.js"></script>
+
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/progressbar.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="scripts/bootstrap.min.js"></script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-51202765-1', 'larryf.ch');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- GOOGLE ANALYTICS -->
+
 </body>
 </html>

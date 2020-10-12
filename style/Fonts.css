@@ -1,0 +1,23 @@
+﻿
+
+@font-face{
+font-family:"Futura W01 Book";
+src:url("../Fonts/774839/57a6731b-fa5c-4c8a-bea8-e2f1a287f309.eot?#iefix");
+src:url("../Fonts/774839/57a6731b-fa5c-4c8a-bea8-e2f1a287f309.eot?#iefix") format("eot"),url("../Fonts/774839/4d0e252c-d811-4a5d-a7f3-6ad72c6b76f2.woff") format("woff"),url("../Fonts/774839/54250d43-02be-4ff9-b802-a4ea104a0611.ttf") format("truetype"),url("../Fonts/774839/15c556fc-4608-4b01-8a0d-9c8631c8bd74.svg#15c556fc-4608-4b01-8a0d-9c8631c8bd74") format("svg");
+}
+
+
+@font-face {
+    font-family: 'socicon';
+    src: url('../fonts/socicon-webfont.eot');
+    src: url('../fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/socicon-webfont.woff') format('woff'),
+         url('../fonts/socicon-webfont.ttf') format('truetype'),
+         url('../fonts/socicon-webfont.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.socicon {
+    font-family: 'socicon' !important;
+}
