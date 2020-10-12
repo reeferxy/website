@@ -10,15 +10,15 @@ function getRandomInt(min, max) {
 var i = getRandomInt(1, 4);
 if (!isMobile()) {
     //Rägeboge (left)
-    $(".video-main .videoContent").html('<video id="video2" preload="preload" muted="true" loop="loop" scale="tofit" canplay="false" width="1280" height="720" style="display: block; " class="is-vertical" autoplay poster="img/raegebogebg2.png"><source src="videos/LarryF_Rainbow.webm" type="video/webm" /><source src="videos/LarryF_Rainbow.mp4" type="video/mp4" /><source src="videos/LarryF_Rainbow.ogv" type="video/ogg" /></video>')
+    $(".video-main .videoContent").html('<video id="video2" preload="preload" muted="true" loop="loop" scale="tofit" canplay="false" width="1280" height="720" style="display: block; " class="is-vertical" autoplay poster="/website/img/raegebogebg2.png"><source src="/website/videos/LarryF_Rainbow.webm" type="video/webm" /><source src="/website/videos/LarryF_Rainbow.mp4" type="video/mp4" /><source src="/website/videos/LarryF_Rainbow.ogv" type="video/ogg" /></video>')
 
     //2000MusicVideo (right)
-    $(".video-main2 .videoContent").html('<video id="video" preload="preload" muted="true" loop="loop" scale="tofit" canplay="false" width="1280" height="720" style="display: block; " class="is-vertical" autoplay poster="img/film2000bg1.png"><source src="videos/LarryF_2000.webm" type="video/webm" /><source src="videos/LarryF_2000.mp4" type="video/mp4" /><source src="videos/LarryF_2000.ogv" type="video/ogg" /></video>')
+    $(".video-main2 .videoContent").html('<video id="video" preload="preload" muted="true" loop="loop" scale="tofit" canplay="false" width="1280" height="720" style="display: block; " class="is-vertical" autoplay poster="/website/img/film2000bg1.png"><source src="/website/videos/LarryF_2000.webm" type="video/webm" /><source src="/website/videos/LarryF_2000.mp4" type="video/mp4" /><source src="/website/videos/LarryF_2000.ogv" type="video/ogg" /></video>')
 
     //2000Film (Center)
-    $(".video-main3 .videoContent").html('<video id="video3" preload="preload" muted="true" loop="loop" scale="tofit" canplay="false" width="1280" height="720" style="display: block; " class="is-vertical" autoplay poster="img/musicvideo2000bg2.png"><source src="videos/LarryF_2000_MusicVideo.webm" type="video/webm" /><source src="videos/LarryF_2000_MusicVideo.mp4" type="video/mp4" /><source src="videos/LarryF_2000_MusicVideo.ogv" type="video/ogg" /></video>')
+    $(".video-main3 .videoContent").html('<video id="video3" preload="preload" muted="true" loop="loop" scale="tofit" canplay="false" width="1280" height="720" style="display: block; " class="is-vertical" autoplay poster="/website/img/musicvideo2000bg2.png"><source src="/website/videos/LarryF_2000_MusicVideo.webm" type="video/webm" /><source src="/website/videos/LarryF_2000_MusicVideo.mp4" type="video/mp4" /><source src="/website/videos/LarryF_2000_MusicVideo.ogv" type="video/ogg" /></video>')
 
-    $(".soundHolder").html('<audio loop><source src="Docs/Winterschlaf.mp3" type="audio/mpeg" /></audio>');
+    $(".soundHolder").html('<audio loop><source src="/website/Docs/Winterschlaf.mp3" type="audio/mpeg" /></audio>');
     $(".toggleBackgroundSound").html('<span class="glyphicon glyphicon-volume-up"></span>');
 }
 
