@@ -543,10 +543,13 @@ $(".coverImage").hover(function () {
     function startAudio()
     {
         if (_playMusic) {
-            $audio = $("audio");
-            $audio.animate({ volume: 0.0 }, 0);
-            $($audio).get(0).play();
-            $audio.animate({ volume: 1.0 }, 3000);
+            setTimeout(function () {
+                $audio = $("audio");
+                $audio.animate({ volume: 0.0 }, 0);
+                $($audio).get(0).play();
+                $audio.animate({ volume: 1.0 }, 3000);
+        }, 667.6667)
+            
         }
     }
 
