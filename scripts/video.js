@@ -6,7 +6,7 @@ $(document).ready(function(){
     function initializeVideo()
     {
         var videoObject = $("video")[0];
-        $('video source').attr('src', "../videos/video"+ videoCount+".mp4");
+        $('video source').attr('src', "/videos/video"+ videoCount+".mp4");
         videoObject.load()
 
         var videoObject = $("video")[0];
