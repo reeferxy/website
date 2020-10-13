@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <title>LARRY F - IRGENDÖPPIS MIT 2000</title>
+    <title>Patrick Tomasella</title>
     <meta name="keywords" content="Larry,LarryF,Rägeboge,Raegeboge,Rageboge,Regeboge,Irgend,öppis,mit,2000,oeppis,irgendetwas,itunes,cede.ch,exlibris" />
     <meta name="description" content="DAS ALBUM &quot;IRGEND&#214;PPIS MIT 2000&quot; AM 12. SEPTEMBER ERH&#196;LTLICH." />
     <link rel="shortlink" href="http://www.larryf.ch/" />
@@ -15,11 +15,11 @@
 
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/website/style/Normalize.css" rel="stylesheet">
-    <link href="/website/style/bootstrap.min.css" rel="stylesheet">
-    <link href="/website/style/Animation.css" rel="stylesheet">
-    <link href="/website/style/Fonts.css" rel="stylesheet">
-    <link href="/website/style/Site.css" rel="stylesheet">
+    <link href="../style/Normalize.css" rel="stylesheet">
+    <link href="../style/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/Animation.css" rel="stylesheet">
+    <link href="../style/Fonts.css" rel="stylesheet">
+    <link href="../style/Site.css" rel="stylesheet">
 
 
     <meta property="og:title" content="LARRY F - IRGENDÖPPIS MIT 2000" />
@@ -43,10 +43,12 @@
 <body>
     <header>
         <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-          <source src="/website/videos/Video1.mp4" type="video/mp4">
-        </video>
-        <div class="container h-100">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" style="opacity: 1;">
+          <source type="video/mp4">
+        </video>       
+      </header>
+      <section>
+        <div class="container h-100 startpage">
           <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
               <h1 class="display-3">Welcome</h1>
@@ -54,13 +56,13 @@
             </div>
           </div>
         </div>
-      </header>
-      
-      <section class="my-5">
+      </section>
+      <section class="my-5 content">
+        
         <div class="container">
           <div class="row">
             <div class="col-md-8 mx-auto">
-              <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background! The header text is vertically centered using flex utilities that are build into Bootstrap 4.</p>
+              <p>he HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background! The header text is vertically centered using flex utilities that are build into Bootstrap 4.</p>
               <p>The overlay color can be changed by changing the <code>background-color</code> of the <code>.overlay</code> class in the CSS.</p>
               <p>Set the mobile fallback image in the CSS by changing the background image of the header element within the media query at the bottom of the CSS snippet.</p>
               <p class="mb-0">
@@ -70,7 +72,8 @@
           </div>
         </div>
       </section>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+      <script src="../scripts/video.js"></script>
 </body>
 </html>
