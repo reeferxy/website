@@ -1,4 +1,4 @@
-var videos = 3;
+var videos = 5;
 var videoCount = 1;
 $(document).ready(function(){
 
