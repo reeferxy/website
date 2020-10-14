@@ -18,6 +18,12 @@ src:url("/website/fonts/774839/57a6731b-fa5c-4c8a-bea8-e2f1a287f309.eot?#iefix")
     font-style: normal;
 }
 
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+
 .socicon {
     font-family: 'socicon' !important;
 }

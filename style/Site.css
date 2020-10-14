@@ -1,4 +1,8 @@
-﻿header {
+﻿html{
+  font-family: 'San Francisco', 'Segoe UI';
+}
+
+header {
     position: fixed;
     background-color: black;
     height: 100vh;
@@ -53,17 +57,47 @@
     background-color:rgba(255,255,255,0.6)
   }
 
-  .lineAnimation{
-    height: 4px;
-background-color: #fff;
-border-radius: 4px;
-position: relative;
-bottom: 25px;
-width: 4px;
-top: 98vh;
-float:right;
+  .lineAnimationContainer
+  {
+    position: relative;
+    top: 94vh;
+  }
+
+  .lineVerticalAnimationContainer
+  {
+    position: relative;
+  }
+
+  .lineHorizontalAnimation{
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: relative;
+    bottom: 25px;
+    width: 2px;
+    float:right;
+  }
+
+  .lineVerticalAnimation{
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: relative;
+    top:0;
+    width: 2px;
+    float:right;
   }
   
+  .cardHolder
+  {
+    overflow: hidden;
+  }
+
+  .cardHolder *{
+      transition-property: all;
+      transition-duration: 1s;
+      transition-timing-function: ease-in-out;
+  }
   
   @media (pointer: coarse) and (hover: none) {
     header {
