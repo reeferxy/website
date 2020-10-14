@@ -14,7 +14,7 @@ $(document).ready(function () {
                 case "top":
                     return "";
                 case "bottom":
-                    return "":
+                    return "";
             }
 
             log('entered at: ' + edge);
