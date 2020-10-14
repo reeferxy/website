@@ -1,7 +1,14 @@
-var videos = 5;
+var videos = 8;
 var videoCount = 1;
 $(document).ready(function(){
 
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      }
+
+      videoCount = getRandomInt(1,videos)
 
     function initializeVideo()
     {
