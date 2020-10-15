@@ -54,43 +54,53 @@ header {
     position: relative;
     top:100vh;
     height:100vh;
-    background-color:rgba(255,255,255,0.6)
+    background-color:rgba(255,255,255,0.325);
+    z-index:10;
+  }
+
+  .content .container{
+    z-index:20;
   }
 
   .lineAnimationContainer
   {
     position: relative;
-    top: 94vh;
+    top: 92vh;
   }
 
-  .lineVerticalAnimationContainer
+  .lineAnimationContainerTop
   {
-    position: relative;
+top: 1vh;
   }
 
-  .lineHorizontalAnimation{
+
+  .lineAnimation{
     height: 2px;
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.8);
     border-radius: 2px;
     position: relative;
     bottom: 25px;
     width: 2px;
+    z-index:15;    
+  }
+
+  .lineRightToLeft
+  {
+    top:25px;
     float:right;
   }
 
-  .lineVerticalAnimation{
-    height: 2px;
-    background-color: #fff;
-    border-radius: 2px;
-    position: relative;
-    top:0;
-    width: 2px;
-    float:right;
+  .lineLeftToRight
+  {
+    float:left;
   }
+
+  
   
   .cardHolder
   {
     overflow: hidden;
+    height: 170px;
   }
 
   .cardHolder *{

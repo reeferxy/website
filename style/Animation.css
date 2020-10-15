@@ -1,27 +1,27 @@
-﻿.lineHorizontalAnimation{
-    animation: animationFramesHorizontal ease-in-out 12s;
+﻿.lineRightToLeft{
+    animation: animationRightToLeft ease-in-out 12s;
     animation-iteration-count: infinite;
     transform-origin: 50% 50%;
-    animation-delay: 0.5s;
-    -webkit-animation: animationFramesHorizontal ease-in-out 12s;
+    animation-delay: 2.5s;
+    -webkit-animation: animationRightToLeft ease-in-out 12s;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform-origin: 50% 50%;
-    -webkit-animation-delay: 0.5s;
-    -moz-animation: animationFramesHorizontal ease-in-out 12s;
+    -webkit-animation-delay: 2.5s;
+    -moz-animation: animationRightToLeft ease-in-out 12s;
     -moz-animation-iteration-count: infinite;
     -moz-transform-origin: 50% 50%;
-    -moz-animation-delay: 0.5s;
-    -o-animation: animationFramesHorizontal ease-in-out 12s;
+    -moz-animation-delay: 2.5s;
+    -o-animation: animationRightToLeft ease-in-out 12s;
     -o-animation-iteration-count: infinite;
     -o-transform-origin: 50% 50%;
-    -o-animation-delay: 0.5s;
-    -ms-animation: animationFramesHorizontal ease-in-out 12s;
+    -o-animation-delay: 2.5s;
+    -ms-animation: animationRightToLeft ease-in-out 12s;
     -ms-animation-iteration-count: infinite;
     -ms-transform-origin: 50% 50%;
     
   }
   
-  @keyframes animationFramesHorizontal{
+  @keyframes animationRightToLeft{
     0% {
         opacity:1;
         
@@ -139,7 +139,7 @@
     }
   }
   
-  @-moz-keyframes animationFramesHorizontal{
+  @-moz-keyframes animationRightToLeft{
     0% {
         opacity:1;
         
@@ -257,7 +257,7 @@
     }
   }
   
-  @-o-keyframes animationFramesHorizontal {
+  @-o-keyframes animationRightToLeft {
     0% {
         opacity:1;
         
@@ -375,7 +375,7 @@
     }
   }
   
-  @-ms-keyframes animationFramesHorizontal {
+  @-ms-keyframes animationRightToLeft {
     0% {
         opacity:1;
         
@@ -502,452 +502,506 @@
 
 
 
-  .lineVerticalAnimation{
-    animation: animationFramesVertical ease-in-out 12s;
+  .lineLeftToRight{
+    animation: animationLeftToRight ease-in-out 12s;
     animation-iteration-count: infinite;
     transform-origin: 50% 50%;
-    animation-delay: 0.5s;
-    -webkit-animation: animationFramesVertical ease-in-out 12s;
+    animation-delay: 2.5s;
+    -webkit-animation: animationLeftToRight ease-in-out 12s;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform-origin: 50% 50%;
-    -webkit-animation-delay: 0.5s;
-    -moz-animation: animationFramesVertical ease-in-out 12s;
+    -webkit-animation-delay: 2.5s;
+    -moz-animation: animationLeftToRight ease-in-out 12s;
     -moz-animation-iteration-count: infinite;
     -moz-transform-origin: 50% 50%;
-    -moz-animation-delay: 0.5s;
-    -o-animation: animationFramesVertical ease-in-out 12s;
+    -moz-animation-delay: 2.5s;
+    -o-animation: animationLeftToRight ease-in-out 12s;
     -o-animation-iteration-count: infinite;
     -o-transform-origin: 50% 50%;
-    -o-animation-delay: 0.5s;
-    -ms-animation: animationFramesVertical ease-in-out 12s;
+    -o-animation-delay: 2.5s;
+    -ms-animation: animationLeftToRight ease-in-out 12s;
     -ms-animation-iteration-count: infinite;
     -ms-transform-origin: 50% 50%;
     
-  } 
+  }
   
-  @keyframes animationFramesVertical{
+  @keyframes animationLeftToRight{
     0% {
         opacity:1;
         
       }
       15% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: left;
       }
       20% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: right;
       }
       30% {
         opacity:1;        
         width:2px;        
-        height:2px;       
-         
+        height:2px;        
+        float: right;
       }
       33% {
-        opacity:1;        
+        opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
-       
+        
       }
       36% {
-        opacity:0;        
+        opacity:0;
+        float:right;
         width:10px;        
         height:10px;
         
       }
       39% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px;
-       
+        
       }
     43% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     46% {
       opacity:1;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     49% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     52% {
       opacity:1;
+      float:right;
       width:10px;        
         height:10px;
-        
+      
     }
     55% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       58% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
         
       }
       61% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       64% {
         opacity:1;
+        float:right;
         width:2px;        
-        height:2px;    
-            
+        height:2px;         
       }
       75%{
-        opacity:1;
-        width:2px;        
-        height:2px; 
+        float:right;
+        width: 100%;
       }
       85%
       {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+          float:left;
+          width:100%;
       }
       90%{
         opacity:1;
-        width:2px;        
-        height:2px; 
+        float:left;
+        width:2px;
       }
     100% {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+      opacity:1;
+      float:left;
+      width:2px;
     }
   }
   
-  @-moz-keyframes animationFramesVertical{
+  @-moz-keyframes animationLeftToRight{
     0% {
         opacity:1;
         
       }
       15% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: left;
       }
       20% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: right;
       }
       30% {
         opacity:1;        
         width:2px;        
-        height:2px;       
-         
+        height:2px;        
+        float: right;
       }
       33% {
-        opacity:1;        
+        opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
-       
+        
       }
       36% {
-        opacity:0;        
+        opacity:0;
+        float:right;
         width:10px;        
         height:10px;
         
       }
       39% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px;
-       
+        
       }
     43% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     46% {
       opacity:1;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     49% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     52% {
       opacity:1;
+      float:right;
       width:10px;        
         height:10px;
-        
+      
     }
     55% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       58% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
         
       }
       61% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       64% {
         opacity:1;
+        float:right;
         width:2px;        
-        height:2px;    
-            
+        height:2px;         
       }
       75%{
-        opacity:1;
-        width:2px;        
-        height:2px; 
+        float:right;
+        width: 100%;
       }
       85%
       {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+          float:left;
+          width:100%;
       }
       90%{
         opacity:1;
-        width:2px;        
-        height:2px; 
+        float:left;
+        width:2px;
       }
     100% {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+      opacity:1;
+      float:left;
+      width:2px;
     }
   }
   
-  @-o-keyframes animationFramesVertical {
+  @-o-keyframes animationLeftToRight {
     0% {
         opacity:1;
         
       }
       15% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: left;
       }
       20% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: right;
       }
       30% {
         opacity:1;        
         width:2px;        
-        height:2px;       
-         
+        height:2px;        
+        float: right;
       }
       33% {
-        opacity:1;        
+        opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
-       
+        
       }
       36% {
-        opacity:0;        
+        opacity:0;
+        float:right;
         width:10px;        
         height:10px;
         
       }
       39% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px;
-       
+        
       }
     43% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     46% {
       opacity:1;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     49% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     52% {
       opacity:1;
+      float:right;
       width:10px;        
         height:10px;
-        
+      
     }
     55% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       58% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
         
       }
       61% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       64% {
         opacity:1;
+        float:right;
         width:2px;        
-        height:2px;    
-            
+        height:2px;         
       }
       75%{
-        opacity:1;
-        width:2px;        
-        height:2px; 
+        float:right;
+        width: 100%;
       }
       85%
       {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+          float:left;
+          width:100%;
       }
       90%{
         opacity:1;
-        width:2px;        
-        height:2px; 
+        float:left;
+        width:2px;
       }
     100% {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+      opacity:1;
+      float:left;
+      width:2px;
     }
   }
   
-  @-ms-keyframes animationFramesVertical {
+  @-ms-keyframes animationLeftToRight {
     0% {
         opacity:1;
         
       }
       15% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: left;
       }
       20% {
-        opacity:1;
+        opacity:1;        
+        width:100%;        
+        float: right;
       }
       30% {
         opacity:1;        
         width:2px;        
-        height:2px;       
-         
+        height:2px;        
+        float: right;
       }
       33% {
-        opacity:1;        
+        opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
-       
+        
       }
       36% {
-        opacity:0;        
+        opacity:0;
+        float:right;
         width:10px;        
         height:10px;
         
       }
       39% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px;
-       
+        
       }
     43% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     46% {
       opacity:1;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     49% {
       opacity:0;
+      float:right;
       width:10px;        
       height:10px;
       
     }
     52% {
       opacity:1;
+      float:right;
       width:10px;        
         height:10px;
-        
+      
     }
     55% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       58% {
         opacity:1;
+        float:right;
         width:10px;        
         height:10px; 
         
       }
       61% {
         opacity:0;
+        float:right;
         width:10px;        
         height:10px;
-         
+        
       }
       64% {
         opacity:1;
+        float:right;
         width:2px;        
-        height:2px;    
-            
+        height:2px;         
       }
       75%{
-        opacity:1;
-        width:2px;        
-        height:2px; 
+        float:right;
+        width: 100%;
       }
       85%
       {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+          float:left;
+          width:100%;
       }
       90%{
         opacity:1;
-        width:2px;        
-        height:2px; 
+        float:left;
+        width:2px;
       }
     100% {
-        opacity:1;
-        width:2px;        
-        height:2px; 
+      opacity:1;
+      float:left;
+      width:2px;
     }
   }
+
+
+
+
+
+
 
 
 

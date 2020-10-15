@@ -19,10 +19,8 @@ $(document).ready(function(){
         var videoObject = $("video")[0];
         videoObject.addEventListener('timeupdate', function(e){
             if(videoObject.currentTime+3 > videoObject.duration)
-            {
-                console.log("pausing video")
-                videoObject.pause();
-                console.log("fadeOut");
+            {                
+                videoObject.pause();                
                 $("video").fadeOut();
                 setTimeout(function () {
                     changeVideo();
@@ -37,15 +35,12 @@ $(document).ready(function(){
         
         var videoObject = $("video")[0];
         $('video source').attr('src', "../videos/video"+ videoCount+".mp4");
-        videoObject.load()      
-        console.log("changing Video. Video #" + videoCount)
-        console.log("fadeIn");
+        videoObject.load()              
         $("video").fadeIn();
         videoCount++;
         if (videoCount > videos)
         {
-            videoCount = 1;
-            console.log("Set videoCounter to 1");
+            videoCount = 1;            
         }
     }
 

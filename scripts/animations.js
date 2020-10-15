@@ -7,7 +7,7 @@ $(document).ready(function () {
             var el_pos = $(this).offset();
             var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
             switch (edge) {
-                case "left":
+                case "left":                    
                     return "";
                 case "right":
                     return "";
