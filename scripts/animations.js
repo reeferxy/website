@@ -1,19 +1,23 @@
 $(document).ready(function () {
 
-    $(".content .card").each(function (index, element) {
+    $(".content .cardHolder").each(function (index, element) {
 
 
         $(element).hover(function (e) {
             var el_pos = $(this).offset();
             var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
             switch (edge) {
-                case "left":                    
-                    return "";
-                case "right":
-                    return "";
+                // case "left":   
+                // $(".movable",this).css("left","-255px").css("right-left","255px");                 
+                //     return "";
+                // case "right":
+                //     $(".movable",this).css("right","-255px").css("right-top","255px");
+                //     return "";
                 case "top":
+                    $(".movable",this).css("top","-160px").css("margin-top","160px");
                     return "";
                 case "bottom":
+                    $(".movable",this).css("top","160").css("margin-top","-160px");
                     return "";
             }
 
@@ -21,7 +25,20 @@ $(document).ready(function () {
         }, function (e) {
             var el_pos = $(this).offset();
             var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
-            log('left at: ' + edge);
+            switch (edge) {
+                // case "left":   
+                // $(".movable",this).css("left","-255px").css("right-left","0");                 
+                //     return "";
+                // case "right":
+                //     $(".movable",this).css("right","-255px").css("right-top","0");
+                //     return "";
+                case "top":
+                    $(".movable",this).css("top","0").css("margin-top","-160");
+                    return "";
+                case "bottom":
+                    $(".movable",this).css("top","0").css("margin-bottom","160");
+                    return "";
+            }
         });
     });
 

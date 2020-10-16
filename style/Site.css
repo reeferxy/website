@@ -100,13 +100,23 @@ top: 1vh;
   .cardHolder
   {
     overflow: hidden;
-    height: 170px;
+    height: 162px;
+    position: relative;
   }
 
+  .card-img
+  {    
+    display: block;
+    position: absolute;
+  }
   .cardHolder *{
       transition-property: all;
       transition-duration: 1s;
       transition-timing-function: ease-in-out;
+  }
+
+  .card{
+    display:block;
   }
   
   @media (pointer: coarse) and (hover: none) {
