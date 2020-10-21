@@ -14,10 +14,20 @@ $(document).ready(function () {
                 //     $(".movable",this).css("right","-255px").css("right-top","255px");
                 //     return "";
                 case "top":
-                    $(".movable",this).css("top","-160px").css("margin-top","160px");
+                    if ($(".movable",this).css("margin-top") == "160px")
+                    {
+                        $(".movable",this).css("top","0").css("margin-top","160px");
+                    }
                     return "";
                 case "bottom":
-                    $(".movable",this).css("top","160").css("margin-top","-160px");
+                    if ($(".movable",this).css("margin-top") == "-160px")
+                    {
+                        $(".movable",this).css("top","160").css("margin-top","0");
+                    }
+                    if ($(".movable",this).css("margin-top") == "160px")
+                    {
+                        $(".movable",this).css("top","160").css("margin-top","0");
+                    }
                     return "";
             }
 
@@ -33,7 +43,7 @@ $(document).ready(function () {
                 //     $(".movable",this).css("right","-255px").css("right-top","0");
                 //     return "";
                 case "top":
-                    $(".movable",this).css("top","0").css("margin-top","-160");
+                    $(".movable",this).css("top","-160px").css("margin-top","0");
                     return "";
                 case "bottom":
                     $(".movable",this).css("top","0").css("margin-bottom","160");

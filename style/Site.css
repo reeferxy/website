@@ -108,16 +108,20 @@ top: 1vh;
   {    
     display: block;
     position: absolute;
+    transition-property: transform, filter;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
   }
-  .cardHolder *{
-      transition-property: all;
-      transition-duration: 1s;
-      transition-timing-function: ease-in-out;
+ 
+  
+  .cardHolder .card-img:hover  {
+    transform: scale(1.5);
+    filter:blur(0.3336px);
   }
 
-  .card{
-    display:block;
-  }
+.card{
+  border:0;
+}
   
   @media (pointer: coarse) and (hover: none) {
     header {
