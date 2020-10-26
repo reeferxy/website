@@ -43,16 +43,18 @@ header {
     z-index: 1;
   }
 
+  .fullScreenSection
+  {
+    height: 100vh;
+  }
+
   .startpage
   {
-    position: relative;
-    top: 50vh; 
-    margin-top:-100px;     
+    position: relative;     
   }
 
   .content{
-    position: relative;
-    top:100vh;
+    position: relative;    
     height:100vh;
     /* background-color:rgba(255,255,255,0.325); */
     z-index:10;
@@ -65,7 +67,8 @@ header {
   .lineAnimationContainer
   {
     position: relative;
-    top: 92vh;
+    top: 92vh;   
+    height:10px;  
   }
 
   .lineAnimationContainerTop
@@ -81,7 +84,8 @@ top: 1vh;
     position: relative;
     bottom: 25px;
     width: 2px;
-    z-index:15;    
+    z-index:15;  
+    
   }
 
   .lineRightToLeft
@@ -98,21 +102,17 @@ top: 1vh;
   
   
   .cardHolder
-  {
-    
-    height: 162px;
+  {   
     position: relative;
   }
   .cardHolder a{
     display:block;
-    position: relative;
-    height: 162px;
+    position: relative;   
   }
 
   .card-img
   {    
-    display: block;
-    position: absolute;
+    display: block;    
     transition-property: transform, filter;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
@@ -125,17 +125,25 @@ top: 1vh;
   }
 
 .card{  
-  display:block;
-  height:162px;
+  display:block;  
   overflow: hidden;
+  border:1px solid transparent;
+  background-color:transparent;
+  transition-property: border;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
 }
 
-.arrow-up {
+.cardHolder a:hover .card{
+  border:1px solid white;
+}
+
+/* .arrow-up {
   width: 0; 
   height: 0; 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-    border-bottom: 10px solid rgba(255,255,255,0.5);
+    border-bottom: 10px solid rgba(255,255,255,1);
     position: absolute;
     bottom: -20px;
     left: 50%;
@@ -144,7 +152,7 @@ top: 1vh;
     transition-property: bottom, opacity;
     transition-duration: 0.7s;
     transition-timing-function: ease-in-out;
-}
+} */
 
 .cardHolder:hover .arrow-up, .cardHolder.active .arrow-up
 {
@@ -167,6 +175,13 @@ top: 1vh;
   height: 350px;
   opacity:1;
 }
+
+
+
+
+
+
+
   
   @media (pointer: coarse) and (hover: none) {
     header {
@@ -176,4 +191,11 @@ top: 1vh;
       display: none;
     }
   }
+
+  @media (max-width: 768px) { 
+    .lineAnimationContainer, .arrow-up
+    {
+     display:none
+    }
+   }
   
