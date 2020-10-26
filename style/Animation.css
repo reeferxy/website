@@ -1,21 +1,21 @@
 ﻿.lineRightToLeft{
-    animation: animationRightToLeft ease-in-out 12s;
+    animation: animationRightToLeft ease-in-out 15s;
     animation-iteration-count: infinite;
     transform-origin: 50% 50%;
-    animation-delay: 2.5s;
-    -webkit-animation: animationRightToLeft ease-in-out 12s;
+    animation-delay: 3.5s;
+    -webkit-animation: animationRightToLeft ease-in-out 15s;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform-origin: 50% 50%;
-    -webkit-animation-delay: 2.5s;
-    -moz-animation: animationRightToLeft ease-in-out 12s;
+    -webkit-animation-delay: 3.5s;
+    -moz-animation: animationRightToLeft ease-in-out 15s;
     -moz-animation-iteration-count: infinite;
     -moz-transform-origin: 50% 50%;
-    -moz-animation-delay: 2.5s;
-    -o-animation: animationRightToLeft ease-in-out 12s;
+    -moz-animation-delay: 3.5s;
+    -o-animation: animationRightToLeft ease-in-out 15s;
     -o-animation-iteration-count: infinite;
     -o-transform-origin: 50% 50%;
-    -o-animation-delay: 2.5s;
-    -ms-animation: animationRightToLeft ease-in-out 12s;
+    -o-animation-delay: 3.5s;
+    -ms-animation: animationRightToLeft ease-in-out 15s;
     -ms-animation-iteration-count: infinite;
     -ms-transform-origin: 50% 50%;
     

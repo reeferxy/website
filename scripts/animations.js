@@ -3,12 +3,12 @@ $(document).ready(function () {
         $(obj).click(function () {
             if ($(obj).parent().hasClass("active")) {
                 $(".cardHolder").removeClass("active");
-                $(".boxContent").removeClass("active");
+                $(".box").removeClass("active");
             }
             else{
                 $(".cardHolder").removeClass("active");
                 $(obj).parent().addClass("active");
-                $(".boxContent").addClass("active");
+                $(".box").addClass("active");
             } 
         });
     });
