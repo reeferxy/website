@@ -1,13 +1,17 @@
 $(document).ready(function () {
     $(".cardHolder a").each(function (index, obj) {
         $(obj).click(function () {
-            if ($(obj).parent().hasClass("active")) {
+            var parent = $(obj).parent();
+            if ($(parent).hasClass("active")) {
                 $(".cardHolder").removeClass("active");
                 $(".box").removeClass("active");
+               
             }
             else{
                 $(".cardHolder").removeClass("active");
-                $(obj).parent().addClass("active");
+                $(parent).addClass("active");
+                var content = $(".cardBoxContent", $(parent)).html();
+                $(".box .boxContent").html(content);
                 $(".box").addClass("active");
             } 
         });
