@@ -16,4 +16,15 @@ $(document).ready(function () {
             } 
         });
     });
+
+
+    var $w = $(window);
+    console.log("FullScreenSection: " + $(".fullScreenSection").height());
+    $w.scroll(function() {
+        var d = $w.scrollTop();
+        var height = $(".fullScreenSection").height();
+        if (height - d > 0) {
+            $("video").css("filter", "blur(" + d / 48 + "px)");
+        }
+    });
 });
