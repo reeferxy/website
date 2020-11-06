@@ -19,7 +19,6 @@ $(document).ready(function () {
 
 
     var $w = $(window);
-    console.log("FullScreenSection: " + $(".fullScreenSection").height());
     $w.scroll(function() {
         var d = $w.scrollTop();
         var height = $(".fullScreenSection").height();
