@@ -23,7 +23,7 @@ $(document).ready(function () {
         var d = $w.scrollTop();
         var height = $(".fullScreenSection").height();
         if (height - d > 0) {
-            $("video").css("filter", "blur(" + d / 48 + "px)");
+            $("video").css("filter", "blur(" + d / 36 + "px)");
         }
     });
 });

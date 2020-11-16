@@ -8,7 +8,7 @@ $(document).ready(function(){
         return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       }
 
-      videoCount = getRandomInt(1,videos)
+    videoCount = getRandomInt(1, videos);
 
     function initializeVideo()
     {
