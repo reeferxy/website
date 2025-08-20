@@ -1,436 +1,887 @@
 ﻿<!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Tomasella - Senior Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <title>Patrick Tomasella</title>
-    <!-- <meta name="keywords"
-      content="Larry,LarryF,Rägeboge,Raegeboge,Rageboge,Regeboge,Irgend,öppis,mit,2000,oeppis,irgendetwas,itunes,cede.ch,exlibris" />
-    <meta name="description"
-      content="DAS ALBUM &quot;IRGEND&#214;PPIS MIT 2000&quot; AM 12. SEPTEMBER ERH&#196;LTLICH." />
-    <link rel="shortlink" href="http://www.larryf.ch/" />
-    <link rel="canonical" href="http://www.larryf.ch/" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
-    <!-- Bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        body {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-    <link href="../style/Normalize.css" rel="stylesheet">
-    <link href="../style/bootstrap.min.css" rel="stylesheet">
-    <link href="../style/Animation.css" rel="stylesheet">
-    <link href="../style/Chart.min.css" rel="stylesheet" />
-    <link href="../style/Fonts.css" rel="stylesheet">
-    <link href="../style/Site.css" rel="stylesheet">
+        /* Matrix Background Effect */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            z-index: -1;
+        }
 
+        .matrix-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0,255,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,0,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: matrix 20s linear infinite;
+        }
 
-    <!-- <meta property="og:title" content="LARRY F - IRGENDÖPPIS MIT 2000" />
-    <meta property="og:site_name" content="IRGENDÖPPIS MIT 2000" />
-    <meta property="og:url" content="http://www.larryf.ch/" />
-    <meta property="og:description" content="DAS ALBUM IRGENDÖPPIS MIT 2000 AM 12. SEPTEMBER ERHÄLTLICH!." />
-    <meta property="fb:app_id" content="1415426235402439" />
+        @keyframes matrix {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(0px); }
+        }
 
-    <meta property="og:image" content="https://www.larryf.ch/img/LarryFCover.jpg" /> -->
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if IE]>
-         <link href="style/IE.css" rel="stylesheet">
-        <![endif]-->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
+        /* Terminal-style Header */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #00ff00;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #00ff00;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .logo::before {
+            content: '$ ';
+            color: #00ff00;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            transition: color 0.3s ease;
+            position: relative;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a::before {
+            content: './';
+            color: #666;
+        }
+
+        .nav-links a:hover {
+            color: #00ff00;
+        }
+
+        .nav-links a:hover::before {
+            color: #00ff00;
+        }
+
+        /* Terminal Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            color: #e0e0e0;
+            position: relative;
+        }
+
+        .terminal {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 600px;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.2);
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f56;
+        }
+
+        .btn:nth-child(2) { background: #ffbd2e; }
+        .btn:nth-child(3) { background: #27ca3f; }
+
+        .terminal-title {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .terminal-content {
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.8;
+        }
+
+        .prompt {
+            color: #00ff00;
+        }
+
+        .command {
+            color: #e0e0e0;
+        }
+
+        .output {
+            color: #888;
+            margin-left: 2rem;
+        }
+
+        .cursor {
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            background: rgba(10, 10, 10, 0.9);
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(26, 26, 46, 0.9);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #00ff00;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .section-title::before {
+            content: '// ';
+            color: #666;
+        }
+
+        /* About Section - Code Block Style */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .code-avatar {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            padding: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ff00;
+            text-align: center;
+        }
+
+        .about-text {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* Experience Cards - Terminal Style */
+        .experience-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #333;
+            border-left: 4px solid #00ff00;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00ff00, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .experience-card:hover {
+            border-color: #00ff00;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.1);
+        }
+
+        .experience-card:hover::before {
+            opacity: 1;
+        }
+
+        .company {
+            color: #00ff00;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .company::before {
+            content: 'class ';
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .period {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .period::before {
+            content: '// ';
+            color: #666;
+        }
+
+        .work-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .work-list li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 30px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .work-list li::before {
+            content: '→';
+            position: absolute;
+            left: 10px;
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(0, 255, 0, 0.2);
+            border-color: #00ff00;
+        }
+
+        /* Contact Section - Terminal Style */
+        .contact {
+            background: rgba(0, 0, 0, 0.9);
+            color: #e0e0e0;
+            text-align: center;
+            border-top: 1px solid #00ff00;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #333;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-item:hover {
+            border-color: #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            color: #00ff00;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Code Animation */
+        .typing {
+            overflow: hidden;
+            border-right: 0.15em solid #00ff00;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.1em;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff00 }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .terminal {
+                padding: 1rem;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00cc00;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="matrix-bg"></div>
+
     <header>
-
-        <video playsinline="playsinline" disablePictureInPicture autoplay="autoplay" muted="muted" style="opacity: 1">
-            <source type="video/mp4">
-        </video>
+        <nav class="container">
+            <div class="logo">patrick.tomasella</div>
+            <ul class="nav-links">
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <section class="fullScreenSection">
-        <div class="container h-100 startpage">
-            <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-white">
-                    <h1 class="display-1">Welcome</h1>
-                    <p class="lead mb-0">patrick.tomasella.me</p>
+
+    <section id="home" class="hero">
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                </div>
+                <div class="terminal-title">patrick@tomasella:~$</div>
+            </div>
+            <div class="terminal-content">
+                <div><span class="prompt">patrick@tomasella:~$</span> <span class="command">whoami</span></div>
+                <div class="output">Senior Software Engineer & Team Lead</div>
+                <div class="output">20+ years of experience in .NET, C#, CMS Development</div>
+                <div class="output">Expert in Sitecore, Enterprise Architecture</div>
+                <br>
+                <div><span class="prompt">patrick@tomasella:~$</span> <span class="command">cat skills.txt</span></div>
+                <div class="output">→ ASP.NET | C# | Sitecore | Team Leadership</div>
+                <div class="output">→ DevOps | Enterprise Solutions | System Architecture</div>
+                <br>
+                <div><span class="prompt">patrick@tomasella:~$</span> <span class="command typing">explore_portfolio</span><span class="cursor">█</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">about_me.cs</h2>
+            <div class="about-grid fade-in">
+                <div class="code-avatar">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">{ }</div>
+                    <div>Patrick</div>
+                    <div>Tomasella</div>
+                    <div style="color: #666; margin-top: 1rem;">Senior Developer</div>
+                </div>
+                <div class="about-text">
+                    <p>// Über mich</p>
+                    <p>public class PatrickTomasella : ISeniorDeveloper {</p>
+                    <p>&nbsp;&nbsp;private readonly Experience _experience = "20+ Jahre";</p>
+                    <p>&nbsp;&nbsp;private readonly string[] _expertise = {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"Enterprise .NET Development",</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"Sitecore CMS Spezialist",</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"Team Leadership & Mentoring",</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"DevOps & CI/CD Pipelines"</p>
+                    <p>&nbsp;&nbsp;};</p>
+                    <p>}</p>
+                    <p>// Leidenschaftlicher Software-Architekt mit Fokus auf skalierbare Enterprise-Lösungen</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="mt-5 pt-5 mainContent">
-        <div class="container-fluid">
-            <div class="lineAnimationContainer lineAnimationContainerTop">
-                <div class="lineAnimation lineLeftToRight"></div>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">work_experience.json</h2>
+            
+            <div class="experience-card fade-in">
+                <div class="company">KalaidosICTAG</div>
+                <div class="period">2015 - Current</div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Hauptaufgaben</h4>
+                    <ul class="work-list">
+                        <li>Bereitstellung und Betrieb der Websites der Unternehmen der Kalaidos Education Group auf Basis von Sitecore</li>
+                        <li>Beratung der Konzernunternehmen bei der Erstellung, Nutzung und Optimierung ihrer Internet-Auftritte sowie beim Einsatz von Web-Technologien</li>
+                        <li>Leitung und Umsetzung von Website-Projekten (technische Realisierung)</li>
+                        <li>Erstellung und Dokumentation technischer Konzepte</li>
+                        <li>Erstellung und Weiterentwicklung bestehender Software-Komponenten in C#</li>
+                        <li>Entwicklung von Schnittstellen (Web-Quarantäne, Web-Portale, M-Files, Abacus, ERP-Systeme)</li>
+                        <li>Installation, Administration, Support, Schulung und Ausbau der Sitecore-Umgebung</li>
+                        <li>Überwachung, Wartung und Administration der Entwicklungsdomäne</li>
+                        <li>Umsetzung kundenspezifischer Software-Lösungen und Durchführung von Anwenderschulungen</li>
+                        <li>Fachliche und personelle Führung der ihm unterstellten Mitarbeiter</li>
+                        <li>Realisierte Websites: akad.ch, kalaidos-fh.ch, wiss.ch, kaderschulen.ch, minervaschulen.ch, kalaidos.ch</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Tech Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ASP.NET WebForms</span>
+                        <span class="tech-tag">ASP.NET MVC</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">MS-SQL</span>
+                        <span class="tech-tag">WebAPI</span>
+                        <span class="tech-tag">WebServices</span>
+                        <span class="tech-tag">Sitecore 7.2-10.0</span>
+                        <span class="tech-tag">Glass Mapper</span>
+                        <span class="tech-tag">Solr</span>
+                        <span class="tech-tag">M-Files</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">XML/XSLT</span>
+                        <span class="tech-tag">PowerShell</span>
+                        <span class="tech-tag">MSBuild</span>
+                        <span class="tech-tag">NuGet</span>
+                        <span class="tech-tag">Jira</span>
+                        <span class="tech-tag">Bamboo</span>
+                        <span class="tech-tag">BitBucket</span>
+                        <span class="tech-tag">Octopus Deploy</span>
+                        <span class="tech-tag">Splunk</span>
+                        <span class="tech-tag">Dynatrace</span>
+                    </div>
+                </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 mx-auto">
 
-                        <div class="jumbotron">
-                            <h1 class="display-4">Hi!</h1>
-                            <p class="lead">Welcome to my site. This should give you a short overview about me and my career.</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="personalInformation px-4 py-2">
-
-                            <h2>About me</h2>
-                            <div class="personal-data">
-                                <div class="data-row">
-                                    <div class="data-icon">
-                                        <i class="fa fa-user"></i>
-                                    </div>
-                                    <div class="data-content">
-                                        Patrick Tomasella
-                                    </div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-icon">
-                                        <i class="fa fa-home"></i>
-                                    </div>
-                                    <div class="data-content">
-                                        8645 Jona
-                                    </div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-icon">
-                                        <i class="fa fa-envelope"></i>
-                                    </div>
-                                    <div class="data-content">
-                                        <a href="mailto:patrick.tomasella@hotmail.ch">patrick.tomasella@hotmail.ch</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="personalInformation dark px-4 py-2">
-
-                            <h2>Experience</h2>
-                            <div class="experience-data">
-                                <canvas id="myChart"></canvas>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-xs-6 mt-5">
-                        <div class="cardHolder">
-                            <a href="#F24" class="gradient-border">
-                                <div class="card">
-                                    <img class="card-img" src="../img/F24.jpg" alt="F24">
-                                </div>
-                                <div class="arrow-up"></div>
-                            </a>
-                            <div class="cardBoxContent">
-                                <div class="title">
-                                    
-                                        <h2>
-                                            F24 AG <span class="small">formerly Dolphin Systems AG (2004 - 2008)</span>
-                                        </h2>
-                                    
-                                    </div>
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <h3>Main work</h3>
-                                            <ul>
-                                                <li>Extending the SMS & FAX portal e-Call&reg;</li>
-                                                <li>Collaboration in the GPS emergency location for federal officials</li>
-                                                <li>Development of the Dolphin System Registration System</li>
-                                                <li>Javascript implementation for the security system Sikado&reg;</li>
-                                                <li>High-Frequency cable installations(Siemens Handy Module RS-232)</li>
-                                                <li>M2M Sony Ericsson Embedden development (GPS tracking)</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h3>Technologies used</h3>
-                                            <ul>
-                                                <li>ASP.NET</li>
-                                                <li>VB.NET</li>
-                                                <li>C#</li>
-                                                <li>MS-SQL</li>
-                                                <li>ASP Classic</li>
-                                                <li>HF (High Frequency Installations)</li>
-                                                <li>M2M (Sony Ericsson)</li>
-                                                <li>Access</li>
-                                                <li>Visual Studio 2003 - 2005</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-xs-6 mt-5">
-                        <div class="cardHolder">
-                            <a href="#comparis">
-                                <div class="card">
-                                    <img class="card-img" src="../img/comparis.jpg" alt="Comparis">
-                                </div>
-                                <div class="arrow-up"></div>
-                            </a>
-                            <div class="cardBoxContent">
-                                <div class="title">
-                                    <h2>Comparis AG <span class="small">(2008 - 2010)</span></h2>
-                                </div>
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <h3>Main work</h3>
-                                            <ul>
-                                                <li>Management of the re-design / write and migration of the mortgage exchange / interest overview application</li>
-                                                <li>Re-write management of the tax and withholding tax application</li>
-                                                <li>Collaboration in the analysis and correction of errors in the health insurance application</li>
-                                                <li>Extension of MS charts in the mortgage market</li>
-                                                <li>Expansion of personal loan and credit card applications</li>
-                                                <li>Independent error analyzes and evaluations of the weekly exceptions</li>
-                                                <li>Preparation of reports for product managers</li>
-                                                <li>Development of MS Office Interop</li>
-                                                <li>Development of the customer survey WebTool</li>
-                                                <li>Development of various automated job tasks (DB cleanup, process monitoring, etc.)</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h3>Technologies used</h3>
-                                            <ul>
-                                                <li>
-                                                    ASP.NET
-                                                </li>
-                                                <li>
-                                                    C#
-                                                </li>
-                                                <li>
-                                                    MS-SQL
-                                                </li>
-                                                <li>
-                                                    MS Charting
-                                                </li>
-                                                <li>
-                                                    MS Project
-                                                </li>
-                                                <li>
-                                                    MS-SQL Server Analysis Services
-                                                </li>
-                                                <li>
-                                                    Visual Studio 2005 - 2008
-                                                </li>
-                                                <li>
-                                                    Sitecore CMS 5.3
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-xs-6 mt-5">
-                        <div class="cardHolder">
-                            <a href="#bytix">
-                                <div class="card">
-                                    <img class="card-img" src="../img/bytix.jpg" alt="Bytix AG">
-                                </div>
-                                <div class="arrow-up"></div>
-                            </a>
-                            <div class="cardBoxContent">
-                                <div class="title">
-                                    <h2>Bytix AG <span class="small">(2010 - 2015)</span></h2>
-                                </div>
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <h3>Main work</h3>
-                                            <ul>
-                                                <li>Installation, configuration, programming and extensions of the customer websites with KenticoCMS and the self-developed BytixCMS</li>
-                                                <li>Automated graphic creation with MS Chart</li>
-                                                <li>Supervision of the Bauwerk parquet HIS products-DB interface</li>
-                                                <li>Extension of the dog trainer, travel and FAQ databases for the Federal FSVO</li>
-                                                <li>Lead contact person for digital competence in Switzerland for the Testa Digital Hub from FCA <span class="small">(Fiat Chrysler Automobile)</span></li>
-                                                <li>Lead development of the GPS picture gallery for the cantonal building insurance association</li>
-                                                <li>Database migrations for the Federal FSVO <span class="small">(> 10 million entries)</span></li>
-                                                <li>Project manager for Tamedia subscription and e-commerce system</li>
-                                                <li>Development of promo and event pages (Orange Cinema, Abarth, Alfa Romeo, Fiat, Fiat Professional, Lancia, Bauwerk-Parkett and KGV)</li>
-                                                <li>Maintenance and expansion of the internal and external infrastructure</li>
-                                                <li>IIS, WebServer, Active Directory, Hyper-V, DNS, RADIUS installations and configurations</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h3>Technologies used</h3>
-                                            <ul>
-                                                <li>
-                                                    ASP.NET WebForms
-                                                </li>
-                                                <li>
-                                                    ASP.NET MVC
-                                                </li>
-                                                <li>
-                                                    C#
-                                                </li>
-                                                <li>
-                                                    MS-SQL
-                                                </li>
-                                                <li>
-                                                    MS Charting
-                                                </li>
-                                                <li>
-                                                    MS Project
-                                                </li>
-                                                <li>
-                                                    MS-SQL Server Analysis Services
-                                                </li>
-                                                <li>
-                                                    Visual Studio 2005 - 2008
-                                                </li>
-                                                <li>
-                                                    Kentico CMS
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-xs-6 mt-5">
-                        <div class="cardHolder">
-                            <a href="#kalaidos">
-                                <div class="card">
-                                    <img class="card-img" src="../img/Kalaidos.jpg" alt="Kalaidos Bildungsgruppe Schweiz">
-                                </div>
-                                <div class="arrow-up"></div>
-                            </a>
-                            <div class="cardBoxContent">
-                                <div class="title">
-                                    <h2>Kalaidos ICT AG <span class="small">(2015 - Current)</span></h2>
-                                </div>
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <h3>Main work</h3>
-                                            <ul>
-                                                <li>Provision and operation of the websites of the companies of the Kalaidos Education Group on the basis of Sitecore</li>
-                                                <li>Advising group companies on the creation, use and optimization of their Internet sites as well as on the use of web technologies</li>
-                                                <li>Management and implementation of website projects (technical implementation)</li>
-                                                <li>Creation and documentation of technical concepts</li>
-                                                <li>Creation and further development of existing software components in C #</li>
-                                                <li>Development of interfaces (web quarantine, web portals, M-Files, Abacus, ERP systems)</li>
-                                                <li>Installation, administration, support, training and expansion of the Sitecore environment</li>
-                                                <li>Monitoring, maintenance and administration of the development domain</li>
-                                                <li>Implementation of customer-specific software solutions and implementation of user training</li>
-                                                <li>Technical and personal management of the employees subordinate to him</li>
-                                                <li>Implemented the following websites in recent years: <a href="https://www.akad.ch" target="_blank">akad.ch</a>, <a href="https://www.kalaidos-fh.ch" target="_blank">kalaidos-fh.ch</a>, <a href="https://www.wiss.ch" target="_blank">wiss.ch</a>, <a href="https://www.kaderschulen.ch" target="_blank">kaderschulen.ch</a>, <a href="https://www.minervaschulen.ch" target="_blank">minervaschulen.ch</a>, <a href="https://www.kalaidos.ch" target="_blank">kalaidos.ch</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h3>Technologies used</h3>
-                                            <ul>
-                                                <li>
-                                                    ASP.NET WebForms
-                                                </li>
-                                                <li>
-                                                    ASP.NET MVC
-                                                </li>
-                                                <li>
-                                                    C#
-                                                </li>
-                                                <li>
-                                                    MS-SQL
-                                                </li>
-                                                <li>
-                                                    WebAPI
-                                                </li>
-                                                <li>
-                                                    WebServices
-                                                </li>
-                                                <li>
-                                                    Sitecore 7.2 - 10.0
-                                                </li>
-                                                <li>
-                                                    Glass Mapper
-                                                </li>
-                                                <li>
-                                                    Solr
-                                                </li>
-                                                <li>
-                                                    M-Files
-                                                </li>
-                                                <li>
-                                                    Git, XML, XSLT, PowerShell, PowerShell DSC, MSBuild, NuGet
-                                                </li>
-                                                <li>
-                                                    Atlassian Jira, Bamboo, BitBucket, Octopus Deploy, Splunk, Siteimprove, Dynatrace
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="box mb-5">
-                            <div class="boxDesign">
-                                <div class="lefttop dot"></div>
-                                <div class="leftbottom dot"></div>
-                                <div class="righttop dot"></div>
-                                <div class="rightbottom dot"></div>
-                            </div>
-                            <div class="boxContent py-4 mx-4">
-
-                            </div>
-                        </div>
-                    </div>
+            <div class="experience-card fade-in">
+                <div class="company">BytixAG</div>
+                <div class="period">2010 - 2015</div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Hauptaufgaben</h4>
+                    <ul class="work-list">
+                        <li>Installation, Konfiguration, Programmierung und Erweiterungen der Kunden-Websites mit KenticoCMS und dem selbst entwickelten BytixCMS</li>
+                        <li>Automatisierte Grafik-Erstellung mit MS Chart</li>
+                        <li>Betreuung der Bauwerk Parkett HIS Produkte-DB Schnittstelle</li>
+                        <li>Erweiterung der Hundetrainer-, Reise- und FAQ-Datenbanken für das Bundes-BLV</li>
+                        <li>Lead-Ansprechpartner für digitale Kompetenz in der Schweiz für den Testa Digital Hub von FCA (Fiat Chrysler Automobile)</li>
+                        <li>Lead-Entwicklung der GPS-Bildergalerie für den kantonalen Gebäudeversicherungsverband</li>
+                        <li>Datenbankmigrationen für das Bundes-BLV (> 10 Millionen Einträge)</li>
+                        <li>Projektleiter für Tamedia Abonnements- und E-Commerce-System</li>
+                        <li>Entwicklung von Promo- und Event-Seiten (Orange Cinema, Abarth, Alfa Romeo, Fiat, Fiat Professional, Lancia, Bauwerk-Parkett und KGV)</li>
+                        <li>Wartung und Ausbau der internen und externen Infrastruktur</li>
+                        <li>IIS, WebServer, Active Directory, Hyper-V, DNS, RADIUS Installationen und Konfigurationen</li>
+                    </ul>
                 </div>
 
-
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Tech Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ASP.NET WebForms</span>
+                        <span class="tech-tag">ASP.NET MVC</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">MS-SQL</span>
+                        <span class="tech-tag">MS Charting</span>
+                        <span class="tech-tag">MS Project</span>
+                        <span class="tech-tag">MS-SQL Server Analysis Services</span>
+                        <span class="tech-tag">Visual Studio 2005-2008</span>
+                        <span class="tech-tag">Kentico CMS</span>
+                    </div>
+                </div>
             </div>
-            <div class="lineAnimationContainer">
-                <div class="lineAnimation lineRightToLeft"></div>
+
+            <div class="experience-card fade-in">
+                <div class="company">ComparisAG</div>
+                <div class="period">2008 - 2010</div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Hauptaufgaben</h4>
+                    <ul class="work-list">
+                        <li>Management des Re-Designs/Neuentwicklung und Migration der Hypothekenbörse/Zinsübersicht-Anwendung</li>
+                        <li>Re-write Management der Steuer- und Quellensteuer-Anwendung</li>
+                        <li>Mitarbeit bei Analyse und Fehlerkorrektur in der Krankenversicherungsanwendung</li>
+                        <li>Erweiterung von MS Charts im Hypothekenmarkt</li>
+                        <li>Ausbau der Privatkredit- und Kreditkartenanwendungen</li>
+                        <li>Eigenständige Fehleranalysen und Auswertung der wöchentlichen Exceptions</li>
+                        <li>Erstellung von Berichten für Produktmanager</li>
+                        <li>Entwicklung von MS Office Interop</li>
+                        <li>Entwicklung des Kunden-Umfrage WebTools</li>
+                        <li>Entwicklung verschiedener automatisierter Job-Tasks (DB Cleanup, Process Monitoring, etc.)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Tech Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ASP.NET</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">MS-SQL</span>
+                        <span class="tech-tag">MS Charting</span>
+                        <span class="tech-tag">MS Project</span>
+                        <span class="tech-tag">MS-SQL Server Analysis Services</span>
+                        <span class="tech-tag">Visual Studio 2005-2008</span>
+                        <span class="tech-tag">Sitecore CMS 5.3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-card fade-in">
+                <div class="company">F24AG</div>
+                <div class="period">2004 - 2008</div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Hauptaufgaben</h4>
+                    <ul class="work-list">
+                        <li>Erweiterung des SMS & FAX Portals e-Call®</li>
+                        <li>Mitarbeit bei GPS-Notfallortung für Bundesbeamte</li>
+                        <li>Entwicklung des Dolphin System Registrierungssystems</li>
+                        <li>Javascript-Implementierung für das Sicherheitssystem Sikado®</li>
+                        <li>Hochfrequenz-Kabelinstallationen (Siemens Handy Module RS-232)</li>
+                        <li>M2M Sony Ericsson Embedded Entwicklung (GPS Tracking)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #00ff00; font-family: 'JetBrains Mono', monospace;">// Tech Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ASP.NET</span>
+                        <span class="tech-tag">VB.NET</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">MS-SQL</span>
+                        <span class="tech-tag">ASP Classic</span>
+                        <span class="tech-tag">HF Systems</span>
+                        <span class="tech-tag">M2M (Sony Ericsson)</span>
+                        <span class="tech-tag">Access</span>
+                        <span class="tech-tag">Visual Studio 2003-2005</span>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
-
     </section>
 
-    <footer>
-        <div class="container-fluid ">
-            <div class="row">
-                <div class="col-md-12 footer">
-                    <div class="container py-5 footerContainer">
-                        
-                       
-                    </div>
-
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title fade-in">contact.init()</h2>
+            <p class="fade-in" style="font-size: 1rem; margin-bottom: 2rem; font-family: 'JetBrains Mono', monospace;">
+                // Let's connect and build something amazing together
+            </p>
+            <div class="contact-grid fade-in">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p>patrick@tomasella.me</p>
                 </div>
-
+                <div class="contact-item">
+                    <h3>💼 LinkedIn</h3>
+                    <p>Connect with me</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🔗 GitHub</h3>
+                    <p>Check my repositories</p>
+                </div>
             </div>
         </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="../scripts/Chart.min.js"></script>
-<script src="../scripts/scripts.js"></script>
-    <script src="../scripts/charts.js"></script>
-    <script src="../scripts/animations.js"></script>
-<script src="../scripts/video.js"></script>
+    </section>
 
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,255,0,0.1)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Matrix rain effect
+        function createMatrixRain() {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '-1';
+            canvas.style.opacity = '0.1';
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;':\",./<>?`~";
+            const charArray = chars.split("");
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+
+            function draw() {
+                ctx.fillStyle = 'rgba(10, 10, 10, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff00';
+                ctx.font = fontSize + 'px JetBrains Mono';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = charArray[Math.floor(Math.random() * charArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(draw, 33);
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // Initialize matrix effect
+        createMatrixRain();
+
+        // Terminal typing effect
+        setTimeout(() => {
+            const typingElement = document.querySelector('.typing');
+            if (typingElement) {
+                typingElement.style.animation = 'none';
+                typingElement.style.borderRight = 'none';
+            }
+        }, 4000);
+
+        // Add glitch effect to tech tags on hover
+        document.querySelectorAll('.tech-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.textShadow = '2px 0 #ff0000, -2px 0 #00ff00';
+                setTimeout(() => {
+                    this.style.textShadow = 'none';
+                }, 150);
+            });
+        });
+
+        // Add cursor effect
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.custom-cursor');
+            if (!cursor) {
+                const newCursor = document.createElement('div');
+                newCursor.className = 'custom-cursor';
+                newCursor.style.cssText = `
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid #00ff00;
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    mix-blend-mode: difference;
+                    transition: all 0.1s ease;
+                `;
+                document.body.appendChild(newCursor);
+            }
+            
+            const cursor_elem = document.querySelector('.custom-cursor');
+            cursor_elem.style.left = e.clientX - 10 + 'px';
+            cursor_elem.style.top = e.clientY - 10 + 'px';
+        });
+
+        // Add konami code easter egg
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+                document.body.style.filter = 'hue-rotate(180deg)';
+                setTimeout(() => {
+                    document.body.style.filter = 'none';
+                }, 3000);
+                konamiCode = [];
+            }
+        });
+    </script>
 </body>
-
 </html>
